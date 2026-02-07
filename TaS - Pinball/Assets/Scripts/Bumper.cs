@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-    [SerializeField] private float _bumperForce = 10f, _litDuration = 0.2f;
     [SerializeField] private Color _litColor = Color.lightGoldenRodYellow;
+    [SerializeField, Range(0f, 100f)] private float _bumperForce = 15f;
+    [SerializeField, Range(0f, 1f)] private float _litDuration = 0.2f;
 
     private bool _isLit = false;
     private Color _defaultColor;

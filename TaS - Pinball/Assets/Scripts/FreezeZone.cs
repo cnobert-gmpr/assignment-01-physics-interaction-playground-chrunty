@@ -4,7 +4,8 @@ using UnityEngine;
 public class FreezeZone : MonoBehaviour
 {
     [SerializeField] private Color _freezeColor = Color.cyan;
-    [SerializeField] private float _freezeDuration = 2f, _freezeCooldown = 3f, _initialDelay = 0.2f;
+    [SerializeField, Range(0f, 5f)] private float _freezeDuration = 2f, _freezeCooldown = 3f;
+    [SerializeField, Range(0f, 1f)] private float _initialDelay = 0.2f;
 
     private SpriteRenderer _spriteRenderer;
     private Color _defaultColor;

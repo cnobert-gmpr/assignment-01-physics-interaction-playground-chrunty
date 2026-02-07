@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] private Color _teleportColor = Color.magenta;
     [SerializeField] private Transform otherPortal;
-    [SerializeField] private float _respawnDelay = 0.5f, _teleportCooldown = 3f, _rotationSpeed = 100f;
-
+    
+    [SerializeField] private Color _teleportActivatedColor = Color.magenta;
+    [SerializeField, Range(0f, 5f)] private float _teleportDelay = 0.5f, _teleportCooldown = 3f;
+    
     private SpriteRenderer _spriteRenderer;
     private Color _defaultColor;
     
+    private float _rotationSpeed = 100f;
     private bool _isTeleporting = false;
 
     void Awake()
@@ -38,14 +40,14 @@ public class Portal : MonoBehaviour
 
                 if (_spriteRenderer != null)
                 {
-                    _spriteRenderer.color = _teleportColor;
+                    _spriteRenderer.color = _teleportActivatedColor;
                 }
                 if (otherPortal != null)
                 {
                     SpriteRenderer otherSpriteRenderer = otherPortal.GetComponent<SpriteRenderer>();
                     if (otherSpriteRenderer != null)
                     {
-                        otherSpriteRenderer.color = _teleportColor;
+                        otherSpriteRenderer.color = _teleportActivatedColor;
                     }
                 }
                 StartCoroutine(TeleportBall(ball));
@@ -55,7 +57,7 @@ public class Portal : MonoBehaviour
 
     private IEnumerator TeleportBall(GameObject ball)
     {
-        yield return new WaitForSeconds(_respawnDelay);
+        yield return new WaitForSeconds(_teleportDelay);
         ball.transform.position = otherPortal.position;
         yield return new WaitForSeconds(_teleportCooldown);
         _isTeleporting = false;

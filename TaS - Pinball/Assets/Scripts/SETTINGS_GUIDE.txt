@@ -1,15 +1,25 @@
 Main 'Game' settings and scene guide:
 
-    Freeze Zones:
-    (Interactables -> FreezeZones -> Spot* (Script here))
-        Freeze Duration: Flaot
-        Freeze Cooldown: Float
+    Portals:
+    (Mantis -> Interactables -> Portal(L/R) (Script attached))
+        Teleport Activated Color: Color
+        Teleport Delay: Float (0 - 5s)
+        Teleport Cooldown: Float (0 - 5s)
 
     Paddles:
-    (Interactables -> Paddle* (Script placed here))
-        X Positon Modifier: Flaot
+    (Mantis -> Interactables -> Paddle(L/R) (Script attached))
+        X Positon Modifier: Float (-0.5 - 0.3)
     
     Bumpers: 
-    (Interactables -> Bumpers -> Bumper** (Script here))
-    (Interactables -> Paddle(L/R) -> Paddle(L/S,L/R) (Script here))
-        Bumper Force: Float
+    (Mantis -> Interactables -> Bumpers -> Bumper(T/M,L/R) (Script attached))
+    (Mantis -> Interactables -> Paddle(L/R) -> Paddle(L/S,L/R) (Script attached))
+        Lit Color: Color
+        Bumper Force: Float (0 - 100)
+        Lit Duration: Float (0 - 1s)
+
+    Freeze Zones:
+    (Mantis -> Interactables -> FreezeZones -> Spot(#) (Script attached))
+        Freeze Activated Color: Color
+        Freeze Duration: Float (0 - 5s)
+        Freeze Cooldown: Float (0 - 5s)
+        Initial Delay: Float (0 - 1s)
