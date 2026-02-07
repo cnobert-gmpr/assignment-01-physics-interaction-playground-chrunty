@@ -1,0 +1,12 @@
+Chris Dahmer Assignment 01 Accomplishments:
+
+Functional Requirements
+
+- Rigidbody2D ball that responds to gravity and interacts correctly with the playfield [2/2]
+- Static colliders defining the playfield boundaries [2/2]
+- Death zone with remove and respawn behaviour [2/2]
+- Bumpers applying impulse with visible feedback [3/3]
+- Trigger targets that react, disable, and reset [4/4]
+- Configurable playfield behaviour [4/4]
+- Scene organization and reuse [2/2]
+- Submission requirements met (GitHub + Brightspace match, completed markers) [1/1]
